@@ -1,4 +1,4 @@
-"""free_shelf URL Configuration
+"""freeshelf URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -15,9 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from collection import views
+from django.views.generic import TemplateView
+from freeshelf import views
 
 urlpatterns = [
-    path('', views, index, name='home')
+    path('', views.index, name='home'),
+    path('about/',
+        TemplateView.as_view(template_name='about.html'), 
+        name='about'),
+    path('contact/',
+        TemplateView.as_view(template_name='contact.html'),
+        name='contact'),
     path('admin/', admin.site.urls),
 ]
