@@ -65,3 +65,7 @@ Users should be able to suggest new books for Freeshelf. You can do this with a 
 ## Resources
 
 - [Free Programming Books Online](https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books.md)
+
+##Run 
+after cloning 
+pip install -r requirements.txt
