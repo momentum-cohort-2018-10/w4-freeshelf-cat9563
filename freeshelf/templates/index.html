@@ -4,6 +4,14 @@
 {% endblock title %}
 
 {% block content %}
-    <h1>Hello World!</h1>
-    <p>I am a basic website.</p>
+    {% for book in books %}
+    <h2>{{ book.title }}</h2>
+    <h3>{{ book.author }} </h3>
+    <p>{{ book.description }}</p>
+    <ul>
+        <li>{{ book.date }}</li>
+        <li>{{ book.url }}</li>
+    </ul>
+    {% endfor %}
+
 {% endblock content %}
