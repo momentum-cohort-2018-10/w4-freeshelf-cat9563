@@ -13,3 +13,7 @@ class Book(models.Model):
        if not self.id:
            self.slug = slugify(self.title)
        super(Book, self).save()
+
+class Category(models.Model):
+    title = models.CharField(max_length=255)
+    slug=models.SlugField(unique=True)

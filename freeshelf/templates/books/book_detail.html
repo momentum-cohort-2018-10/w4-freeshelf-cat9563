@@ -1,0 +1,16 @@
+{% extends 'base.html' %} 
+{% block title %}
+    {{ category.name }} - {{ block.super }} 
+{% endblock title %}
+
+{% block content %}
+    <h1>{{ category.name }}</h1>
+     <a href="{% url 'edit_cat' slug=cat.slug %}"> Edit me! </a>
+    {% comment %} {% if user == cat.user %}
+        <p>
+            <a href="{% url 'edit_cat' slug=cat.slug %}">
+                Edit me!
+            </a>
+        <p>
+    {% endif %} {% endcomment %}
+{% endblock content %}

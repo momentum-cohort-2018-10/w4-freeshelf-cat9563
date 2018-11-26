@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.views.generic import TemplateView
 from freeshelf import views
 
@@ -26,5 +26,12 @@ urlpatterns = [
     path('contact/',
         TemplateView.as_view(template_name='contact.html'),
         name='contact'),
+    path('categories/',
+        TemplateView.as_view(template_name='categories.html'),
+        name='categories'),
+    path('books/<slug>/', views.book_detail,
+        name='book_detail'),
+    # path('books/<slug>/edit/',
+    #     views.edit_book, name='edit_book'),
     path('admin/', admin.site.urls),
 ]

@@ -17,7 +17,7 @@ class Command(BaseCommand):
         pass
 
     def handle(self, *args, **options):
-        print("Deleting books...")
+        print("Deleting books")
         Book.objects.all().delete()
         with open(get_path('books.csv'), 'r') as file:
             reader = csv.DictReader(file)
@@ -30,3 +30,4 @@ class Command(BaseCommand):
                     url=row['url'],
                 )
                 book.save()
+            print("Updated Books")
